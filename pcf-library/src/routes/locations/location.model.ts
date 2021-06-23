@@ -15,7 +15,7 @@ export interface Location extends Document {
   updatedAt?: Date;
 }
 
-const schema = new Schema(
+const LocationSchema = new Schema(
   {
     name: {
       type: String,
@@ -32,5 +32,5 @@ const schema = new Schema(
   { timestamps: true },
 );
 
-const model = mongoose.model('Location', schema);
+const model = mongoose.model('Location', LocationSchema);
 export default model;

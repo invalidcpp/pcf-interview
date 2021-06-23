@@ -2,6 +2,7 @@ import { expect } from 'chai';
 import 'mocha';
 import authenticate from './authenticate';
 import Users from '../users.model';
+import { UserRole } from '../../../lib/types';
 
 describe('Users :: Authenticate', async () => {
   beforeEach(async () => {
@@ -10,24 +11,27 @@ describe('Users :: Authenticate', async () => {
       system: false,
       username: 'super',
       password: 'super',
-      role: 'Super',
+      role: "Super",
     };
     await Users.create(u);
   });
 
   it('Authenticate succeeds', async () => {
     // TODO: Write a suitable test
-    throw new Error('Not implemented');
+
+    expect(await authenticate({ username: "super", password: "super"})).to.have.property("success", true);
   });
 
   it('Fails if the user doesnt exist', async () => {
     // TODO: Write a suitable test
-    throw new Error('Not implemented');
+    const errMsg = 'User test_user_123 does not exist';
+    
+    expect(authenticate({ username: 'test_user_123', password: 'test_user_123' })).to.be.rejectedWith(errMsg);
   });
 
   it('Fails if the password is wrong', async () => {
     const errMsg = `Error: Invalid password`;
 
-    await expect(authenticate({ username: 'super', password: 'ppp' })).to.be.rejectedWith(errMsg);
+    expect(authenticate({ username: 'super', password: 'ppp' })).to.be.rejectedWith(errMsg);
   });
 });

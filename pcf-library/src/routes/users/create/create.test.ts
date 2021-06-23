@@ -27,6 +27,7 @@ describe('Users :: Create', async () => {
     if (result === null) {
       throw new Error(`User is null`);
     }
+    
 
     expect(result).to.have.property('_id');
     expect(result).to.have.property('username', candidate.username, 'Username mismatch');
