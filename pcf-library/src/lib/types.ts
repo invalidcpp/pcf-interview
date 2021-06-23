@@ -2,7 +2,7 @@ export type Nullable<T> = T | undefined | null;
 
 export enum UserRole {
   super = 'Super',
-  standard = 'Standard'
+  standard = 'Standard',
 }
 
 export interface AuthResponse {

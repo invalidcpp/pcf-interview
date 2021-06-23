@@ -25,7 +25,7 @@ const remove = async (options: UpdateLocationOptions): Promise<LocationLean> => 
     }
     await location.save();
     const found = (await Locations.findOne({ _id: location._id })) as Location;
-    
+
     await session.commitTransaction();
     await session.endSession();
     return found as LocationLean;

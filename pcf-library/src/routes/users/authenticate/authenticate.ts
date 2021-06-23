@@ -3,7 +3,6 @@ import bcrypt from 'bcryptjs';
 import Users, { User } from '../users.model';
 import { AuthResponse, AuthUserOptions } from '../../../lib/types';
 
-
 const auth = async (options: AuthUserOptions): Promise<AuthResponse> => {
   const { username, password } = options;
   const session = await mongoose.startSession();

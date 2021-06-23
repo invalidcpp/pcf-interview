@@ -20,10 +20,10 @@ describe('Locations :: Create', async () => {
 
   it('Fails if the name already exists', async () => {
     // TODO: Write a suitable test
-    const name = "testLocation";
+    const name = 'testLocation';
     await create({ name });
     const errMsg = `The location ${name} already exists`;
 
-    expect(create({ name })).to.be.rejectedWith(errMsg)
+    expect(create({ name })).to.be.rejectedWith(errMsg);
   });
 });

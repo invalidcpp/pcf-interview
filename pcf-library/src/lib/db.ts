@@ -23,7 +23,7 @@ const connect = async (opts = {}): Promise<void> => {
 
     await mongoose.connect(dbUrl, connectionOptions);
 
-    mongoose.connection.on('error', err => {
+    mongoose.connection.on('error', (err) => {
       throw new Error(`Database connection error: ${err.message}`);
     });
 

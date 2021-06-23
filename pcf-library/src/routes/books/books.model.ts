@@ -1,14 +1,14 @@
 import mongoose, { Document, Schema } from 'mongoose';
-import LocationModel, {LocationLean} from '../locations/location.model';
-import UserModel, {UserLean} from '../users/users.model';
+import LocationModel, { LocationLean } from '../locations/location.model';
+import UserModel, { UserLean } from '../users/users.model';
 
 export interface BookLean {
-    title: string;
-    author: string;
-    ISBN: string;
-    CheckedOut: boolean;
-    Location: LocationLean;
-    User?: UserLean;
+  title: string;
+  author: string;
+  ISBN: string;
+  CheckedOut: boolean;
+  Location: LocationLean;
+  User?: UserLean;
 }
 
 export interface Book extends BookLean, Document {}
@@ -38,7 +38,7 @@ const BookSchema = new Schema(
       default: false,
     },
     Location: [LocationModel.schema],
-    User: [UserModel.schema]
+    User: [UserModel.schema],
   },
   { timestamps: true },
 );

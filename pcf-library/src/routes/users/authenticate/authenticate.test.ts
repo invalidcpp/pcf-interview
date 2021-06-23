@@ -11,7 +11,7 @@ describe('Users :: Authenticate', async () => {
       system: false,
       username: 'super',
       password: 'super',
-      role: "Super",
+      role: 'Super',
     };
     await Users.create(u);
   });
@@ -19,14 +19,19 @@ describe('Users :: Authenticate', async () => {
   it('Authenticate succeeds', async () => {
     // TODO: Write a suitable test
 
-    expect(await authenticate({ username: "super", password: "super"})).to.have.property("success", true);
+    expect(await authenticate({ username: 'super', password: 'super' })).to.have.property(
+      'success',
+      true,
+    );
   });
 
   it('Fails if the user doesnt exist', async () => {
     // TODO: Write a suitable test
     const errMsg = 'User test_user_123 does not exist';
-    
-    expect(authenticate({ username: 'test_user_123', password: 'test_user_123' })).to.be.rejectedWith(errMsg);
+
+    expect(
+      authenticate({ username: 'test_user_123', password: 'test_user_123' }),
+    ).to.be.rejectedWith(errMsg);
   });
 
   it('Fails if the password is wrong', async () => {

@@ -10,15 +10,15 @@ const seedDb = async (): Promise<void> => {
   const existingLocations = await Locations.find({});
   const existingBook = await Books.find({});
 
-  if(!existingLocations.length) {
-    console.log("Seeding default location");
+  if (!existingLocations.length) {
+    console.log('Seeding default location');
     LocationHolder = await Locations.create([
       {
-        name: "SuperLocation",
-        removed: false
+        name: 'SuperLocation',
+        removed: false,
       },
     ]);
-    console.log("Default Location created!");
+    console.log('Default Location created!');
   }
 
   if (!existingUsers.length) {
@@ -33,20 +33,20 @@ const seedDb = async (): Promise<void> => {
     console.log(`Default user created`);
   }
 
-  if(!existingBook.length){
-    console.log("Seeding default book");
+  if (!existingBook.length) {
+    console.log('Seeding default book');
     await Books.create([
       {
-        Title: "The Name of the Wind",
-        Author: "Patrick Rothfuss",
-        ISBN: "978-0-7564-0407-9",
+        Title: 'The Name of the Wind',
+        Author: 'Patrick Rothfuss',
+        ISBN: '978-0-7564-0407-9',
         CheckedOut: true,
         Location: LocationHolder,
-        User: UserHolder
-      }
+        User: UserHolder,
+      },
     ]);
     console.log(`Default user created`);
-    console.log(await Books.findOne({Title: "The Name of the Wind"}));
+    console.log(await Books.findOne({ Title: 'The Name of the Wind' }));
   }
 };
 

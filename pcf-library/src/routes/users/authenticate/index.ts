@@ -15,7 +15,9 @@ export default async (req: Request, res: Response): Promise<Response> => {
       throw new Error('Authentication failed');
     }
 
-    return res.status(200).json({ success: true, authenticated: authed.success, role: authed.role });
+    return res
+      .status(200)
+      .json({ success: true, authenticated: authed.success, role: authed.role });
   } catch (error) {
     console.error(error.message, null, error.name);
     return res.status(200).json({ success: false, message: error.message });
