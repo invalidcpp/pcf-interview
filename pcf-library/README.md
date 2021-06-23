@@ -20,16 +20,16 @@ tests that aren't route-specific.
 
 ## Tasks
 
-  - Implement the users/create route (see the create.test.ts for expected behaviour)
-  - Fill in missing tests for users/authenticate, locations/create and locations/update
-  - Add a default Location to the database seeding script
-  - Create a model describing a Book. No behaviour implementation is needed. A Book should have the following
+  - ✅ Implement the users/create route (see the create.test.ts for expected behaviour)
+  - ✅ Fill in missing tests for users/authenticate, locations/create and locations/update
+  - ✅ Add a default Location to the database seeding script
+  - ✅ Create a model describing a Book. No behaviour implementation is needed. A Book should have the following
     - Title, Author and ISBN (all strings)
     - Checked-out flag (boolean)
     - a referenced Location
     - a referenced User (if checked out)
-  - Create the relevant Typescript interfaces for a Book
-  - Add a default Book to the database seeding script
+  - ✅ Create the relevant Typescript interfaces for a Book
+  - ✅ Add a default Book to the database seeding script
 
 ## Expected Results
 
