@@ -9,7 +9,9 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "node main.js \"Terry Pratchett\"",
+    "missing_args": "node main.js",
+    "missing_author": "node main.js \"34563456345634563456\"",
+    "working": "node main.js \"Terry Pratchett\"",
     "start": "node main.js"
   },
   "author": "Jordan James",
